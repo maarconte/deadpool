@@ -67,15 +67,15 @@ msgstr ""
 msgid "Theme: %1$s by %2$s."
 msgstr ""
 
-#: functions.php:47
+#: functions.php:57
 msgid "Primary"
 msgstr ""
 
-#: functions.php:90
+#: functions.php:100
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:92
+#: functions.php:102
 msgid "Add widgets here."
 msgstr ""
 
