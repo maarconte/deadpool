@@ -1,0 +1,18 @@
+.team {
+	.member {
+		text-align: center;
+		.member-avatar {
+			height: 90px;
+			width: 90px;
+			border-radius: 50%;
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center center;
+			margin: 0 auto 10px;
+		}
+		.member-poste {
+			color: $color__red;
+			font-size: 0.9rem;
+		}
+	}
+}
