@@ -75,8 +75,12 @@ msgstr ""
 msgid "Qui sommes nous"
 msgstr ""
 
-#: functions.php:117
+#: functions.php:117, functions.php:126
 msgid "Add widgets here."
+msgstr ""
+
+#: functions.php:124
+msgid "Nous contacter"
 msgstr ""
 
 #: header.php:24

@@ -73,3 +73,15 @@
 		color: #fff;
 	}
 }
+.contact {
+	background-color: $color__background-contact;
+	h2 {
+		color: #fff;
+	}
+	.actu {
+		background-color: #fff;
+		h2 {
+			color: initial;
+		}
+	}
+}

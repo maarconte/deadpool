@@ -69,18 +69,25 @@ get_header(); ?>
 				<?php endif; ?>
 			</div>
 			</div>
-<div class="container row-section">
-	<div class="contact">
-<h2>Nous contacter</h2>
-	<form action=""></form>
+
+	<div class="contact row row-section">
+	<div class="container">
+	<div class="form col-md-6">
+			<?php if ( !function_exists( 'dynamic_sidebar' ) || !dynamic_sidebar('Nous contacter') ) ?>
+	</div>
+
+		<div class="actu col-md-6">
+	<h2>Suivez notre actualité</h2>
 </div>
+	</div>
+</div>
+
+
 <div class="map">
 
 </div>
-<div class="actu">
-	<h2>Suivez notre actualité</h2>
-</div>
-</div>
+
+
 
 
 		</main>
