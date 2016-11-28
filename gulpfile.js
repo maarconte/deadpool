@@ -5,6 +5,7 @@ var plumber = require('gulp-plumber');
 var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 var csscomb = require('gulp-csscomb');
+var cleanCSS 	 = require('gulp-clean-css');
 var cssbeautify = require('gulp-cssbeautify');
 var sourcemaps = require('gulp-sourcemaps');
 var rename = require('gulp-rename');
@@ -20,6 +21,7 @@ var browserSync = require('browser-sync');
 var runSequence = require('run-sequence');
 var wiredep = require('wiredep').stream;
 var js_files = ['js/*.js', '!js/*.min.js', '!js/lib/**/*.js'];
+var bootstrap_files = ['bootstrap/*.css','!bootstrap/*.min.css'];
 
 var build_files = [
   '**',
@@ -87,6 +89,14 @@ gulp.task('compress', function () {
 		.pipe(gulp.dest('.'));
 });
 
+gulp.task('compress_bootstrap', function() {
+  return gulp.src(bootstrap_files, {base: '.'})
+      .pipe(gulp.dest('.'))
+          .pipe(cleanCSS())
+	      .pipe(rename({extname: '.min.css'}))
+	          .pipe(gulp.dest('.'));
+		  });
+
 gulp.task('makepot', function () {
 	return gulp.src(['**/*.php'])
 		.pipe(sort())
@@ -122,6 +132,7 @@ gulp.task('watch', function () {
 	});
 	gulp.watch(js_files, ['lint']);
 	gulp.watch(js_files, ['compress']);
+	gulp.watch(bootstrap_files, ['compress_bootstrap']);
 	gulp.watch(['**/*.php'], ['makepot']);
 	gulp.watch('sass/**/*.scss', ['sass-watch']);
 });
@@ -149,4 +160,4 @@ gulp.task('build', function (callback) {
 	runSequence('build-clean', 'build-copy', 'build-zip', 'build-delete');
 });
 
-gulp.task('default', ['sass', 'lint', 'compress', 'makepot', 'watch', 'browserSync']);
+gulp.task('default', ['sass', 'lint', 'compress','compress_bootstrap', 'makepot', 'watch', 'browserSync']);

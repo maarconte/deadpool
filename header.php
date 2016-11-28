@@ -21,29 +21,39 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'deadpool' ); ?></a>
+<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'deadpool' ); ?></a>
+	<header id="masthead" class="site-header" role="banner" style="background-image:url('<?php header_image(); ?>')">
+		<div class="overlay"></div>
+		<div class="top-bar row">
+		<div class="container">
+			<div class="site-branding col-md-7">
+				<a class="site-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+					<img src="http://localhost/xprdev/wp-content/themes/deadpool/img/logo.png" alt="">
+				</a>
+			</div><!-- .site-branding -->
+		<nav id="site-navigation" class="main-navigation navbar col-md-5" role="navigation">
 
-	<header id="masthead" class="site-header" role="banner">
-		<div class="site-branding">
-			<?php
-			if ( is_home() ) : ?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<?php else : ?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-			<?php
-			endif;
+			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'deadpool' ); ?></button>
+			<?php wp_nav_menu( array(
+                'menu'              => 'primary',
+                'theme_location'    => 'primary',
+                'depth'             => 2,
+                'container'         => 'ul',
+                'container_class'   => 'collapse navbar-collapse',
+        		'container_id'      => 'bs-example-navbar-collapse-1',
+                'menu_class'        => 'nav navbar-nav',
+                'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
+                'walker'            => new wp_bootstrap_navwalker())
+            );?>
+		</nav><!-- #site-navigation -->
+		</div>
 
-			$description = get_bloginfo( 'description', 'display' );
+			</div>
+<?php $description = get_bloginfo( 'description', 'display' );
 			if ( $description || is_customize_preview() ) : ?>
-				<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
+				<h2 class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></h2>
 			<?php
 			endif; ?>
-		</div><!-- .site-branding -->
-
-		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'deadpool' ); ?></button>
-			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
-		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">

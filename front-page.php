@@ -15,10 +15,8 @@
 get_header(); ?>
 
 	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
-
-
-
+		<main id="main" class="site-main container" role="main">
+<?php    if ( !function_exists( 'dynamic_sidebar' ) || !dynamic_sidebar('Qui sommes nous') ) ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 

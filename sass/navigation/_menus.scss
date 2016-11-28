@@ -1,9 +1,16 @@
+.top-bar {
+	margin: 0;
+}
+.site-branding {
+	height: 50px;
+	padding: 10px;
+	position: relative;
+	.site-logo img {
+		height: 100%;
+	}
+}
 .main-navigation {
-	clear: both;
 	display: block;
-	float: left;
-	width: 100%;
-
 	ul {
 		display: none;
 		list-style: none;
@@ -61,6 +68,9 @@
 	a {
 		display: block;
 		text-decoration: none;
+		color: #fff;
+		font-family: $font__heading;
+		font-weight: 600;
 	}
 
 	.current_page_item > a,
