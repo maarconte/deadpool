@@ -1,7 +1,8 @@
 .row-section {
-		padding-top: 30px;
+	padding-top: 30px;
 	padding-bottom: 30px;
 }
+
 .team {
 	.member {
 		text-align: center;
@@ -24,12 +25,44 @@
 .services {
 	background-color: $color__background-services;
 	color: #fff;
+	position: relative;
+	.service {
+		padding-top: 20px;
+	}
 	h2 {
 		color: #fff;
 	}
-	.fa {
-		height: 30px;
-		width: 30px;
-		color: #fff;
+	.circle {
+		$size-circle: 60px;
+		position: absolute;
+		top: 5px;
+		left: -20px;
+		height: $size-circle;
+		width: $size-circle;
+		background-color: #fff;
+		border-radius: 50%;
+		text-align: center;
+		float: left;
+		.fa {
+			color: $color__dark-red;
+			font-size: $size-circle / 2;
+			line-height: $size-circle;
+		}
+	}
+	.service-name {
+		line-height: 30px;
+		margin-left: 40px;
+		&:after {
+			content: "";
+			display: table;
+			clear: both;
+		}
+	}
+
+	ul {
+		padding: 0;
+		li {
+			list-style: circle;
+		}
 	}
 }

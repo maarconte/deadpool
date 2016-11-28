@@ -9,7 +9,7 @@
 
 ?>
 <div class="service col-md-4">
-<?php echo get_field( "icon" ); ;?>
+<div class="circle"><?php echo get_field( "icon" ); ;?></div>
 <p class="service-name"><?php the_title(); ?></p>
 <?php the_content();?>
 </div>
