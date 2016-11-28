@@ -15,15 +15,32 @@
 get_header(); ?>
 
 	<div id="primary" class="content-area">
-		<main id="main" class="site-main container" role="main">
+		<main id="main" class="site-main container-fluid" role="main">
+		<div class="container">
 			<!-- Description de l'entreprise -->
 			<?php if ( !function_exists( 'dynamic_sidebar' ) || !dynamic_sidebar('Qui sommes nous') ) ?>
-			<!-- Equipe -->
-			<div class="team">
-			<?php if ( have_posts() ) : ?>
-						<?php $loop = new WP_Query( array( 'post_type' => 'equipe', 'posts_per_page' => 8, 'order'	=> 'DESC' ) );
-							while ( $loop->have_posts() ) : $loop->the_post();
+				<!-- Equipe -->
+
+				<div class="team row row-section">
+					<?php $team = new WP_Query( array( 'post_type' => 'equipe', 'posts_per_page' => 8, 'order'	=> 'DESC' ) ); ?>
+						<?php if ( $team->have_posts() ) : ?>
+							<?php while ( $team->have_posts() ) : $team->the_post();
   								get_template_part( 'template-parts/content', 'membre' );
+							endwhile;?>
+						<?php else : ?>
+							<div> <?php get_template_part( 'template-parts/content', 'none' ); ?> </div>
+						<?php endif; ?>
+				</div>
+		</div>
+
+			<div class="services row row-section">
+			<div class="container">
+							<h2>Nos services</h2>
+								<?php $services = new WP_Query( array( 'post_type' => 'services', 'posts_per_page' => 9, ) ); ?>
+					<?php if ( $services->have_posts() ) : ?>
+
+						<?php	while ( $services->have_posts() ) : $services->the_post();
+  								get_template_part( 'template-parts/content','services' );
 							endwhile;?>
 					 	<?php else : ?>
 							<div>
@@ -32,9 +49,14 @@ get_header(); ?>
 				<?php endif; ?>
 			</div>
 
+			</div>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
 
-<?php
+
+		</main>
+		<!-- #main -->
+	</div>
+	<!-- #primary -->
+
+	<?php
 get_footer();

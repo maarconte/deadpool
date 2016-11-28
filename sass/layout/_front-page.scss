@@ -1,3 +1,7 @@
+.row-section {
+		padding-top: 30px;
+	padding-bottom: 30px;
+}
 .team {
 	.member {
 		text-align: center;
@@ -14,5 +18,18 @@
 			color: $color__red;
 			font-size: 0.9rem;
 		}
+	}
+}
+
+.services {
+	background-color: $color__background-services;
+	color: #fff;
+	h2 {
+		color: #fff;
+	}
+	.fa {
+		height: 30px;
+		width: 30px;
+		color: #fff;
 	}
 }

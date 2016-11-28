@@ -10,12 +10,27 @@
 
 function my_scripts_enqueue() {
     wp_register_script( 'bootstrap-js', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js', array('jquery'), NULL, true );
-    wp_register_style( 'bootstrap-css', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css', false, NULL, 'all' );
-
     wp_enqueue_script( 'bootstrap-js' );
-    wp_enqueue_style( 'bootstrap-css' );
 }
 add_action( 'wp_enqueue_scripts', 'my_scripts_enqueue' );
+
+function wpt_register_css() {
+    wp_register_style( 'bootstrap.min', get_template_directory_uri() . '/bootstrap/bootstrap.min.css' );
+	//wp_register_style( 'bootstrap-flex.min', get_template_directory_uri() . '/bootstrap/bootstrap-flex.min.css' );
+	wp_register_style( 'bootstrap-grid.min', get_template_directory_uri() . '/bootstrap/bootstrap-grid.min.css' );
+	wp_register_style( 'bootstrap-reboot.min', get_template_directory_uri() . '/bootstrap/bootstrap-reboot.min.css' );
+    wp_enqueue_style( 'bootstrap.min' );
+	//wp_enqueue_style( 'bootstrap-flex.min' );
+	wp_enqueue_style( 'bootstrap-grid.min' );
+	wp_enqueue_style( 'bootstrap-reboot.min' );
+}
+add_action( 'wp_enqueue_scripts', 'wpt_register_css' );
+
+//enqueues our locally supplied font awesome stylesheet
+function enqueue_our_required_stylesheets(){
+	wp_enqueue_style('font-awesome', get_stylesheet_directory_uri() . '/font-awesome-4.7.0/css/font-awesome.min.css');
+}
+add_action('wp_enqueue_scripts','enqueue_our_required_stylesheets');
 
 if ( ! function_exists( 'deadpool_setup' ) ) :
 /**
@@ -193,7 +208,37 @@ array(
 		'thumbnail',
 	),
 ) );
+
+	register_post_type(   'services',
+array(
+		'label' => 'Services',
+		'labels' => array(
+		'name' => 'Services',
+		'singular_name' => 'Service',
+		'all_items' => 'Tous les services',
+		'add_new_item' => 'Ajouter un service',
+		'edit_item' => 'Éditer le service',
+		'new_item' => 'Nouveau service',
+		'view_item' => 'Voir le service',
+		'search_items' => 'Rechercher parmi les service',
+		'not_found' => 'Pas de services trouvés',
+		'not_found_in_trash'=> 'Pas de services dans la corbeille'
+	),
+	'public' => true,
+	'capability_type' => 'post',
+	'supports' => array(
+		'title',
+		'editor',
+	),
+) );
 }
+
+/* Autoriser les fichiers SVG */
+function wpc_mime_types($mimes) {
+  $mimes['svg'] = 'image/svg+xml';
+  return $mimes;
+}
+add_filter('upload_mimes', 'wpc_mime_types');
 
 
 /**
