@@ -40,7 +40,7 @@ get_header(); ?>
 					<?php if ( $services->have_posts() ) : ?>
 
 						<?php	while ( $services->have_posts() ) : $services->the_post();
-  								get_template_part( 'template-parts/content','services' );
+  								get_template_part( 'template-parts/content','service' );
 							endwhile;?>
 					 	<?php else : ?>
 							<div>
@@ -50,7 +50,37 @@ get_header(); ?>
 			</div>
 
 			</div>
+<div class="portfolio container row-section">
+<h2>Portfolio</h2>
+</div>
+			<div class="clients row row-section">
+						<div class="container">
+							<h2>Nos clients</h2>
+								<?php $clients = new WP_Query( array( 'post_type' => 'clients', 'posts_per_page' => 9, ) ); ?>
+					<?php if ( $clients->have_posts() ) : ?>
 
+						<?php	while ( $clients->have_posts() ) : $clients->the_post();
+  								get_template_part( 'template-parts/content','client' );
+							endwhile;?>
+					 	<?php else : ?>
+							<div>
+								<?php get_template_part( 'template-parts/content', 'none' ); ?>
+							</div>
+				<?php endif; ?>
+			</div>
+			</div>
+<div class="container row-section">
+	<div class="contact">
+<h2>Nous contacter</h2>
+	<form action=""></form>
+</div>
+<div class="map">
+
+</div>
+<div class="actu">
+	<h2>Suivez notre actualité</h2>
+</div>
+</div>
 
 
 		</main>
