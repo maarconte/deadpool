@@ -16,80 +16,76 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main container-fluid" role="main">
-		<div class="container">
-			<!-- Description de l'entreprise -->
-			<?php if ( !function_exists( 'dynamic_sidebar' ) || !dynamic_sidebar('Qui sommes nous') ) ?>
-				<!-- Equipe -->
+			<div class="container">
+				<!-- Description de l'entreprise -->
+				<?php if ( !function_exists( 'dynamic_sidebar' ) || !dynamic_sidebar('Qui sommes nous') ) ?>
+					<!-- Equipe -->
 
-				<div id="equipe" class="team row row-section">
-					<?php $team = new WP_Query( array( 'post_type' => 'equipe', 'posts_per_page' => 8, 'order'	=> 'DESC' ) ); ?>
-						<?php if ( $team->have_posts() ) : ?>
-							<?php while ( $team->have_posts() ) : $team->the_post();
+					<div id="equipe" class="team row row-section">
+						<?php $team = new WP_Query( array( 'post_type' => 'equipe', 'posts_per_page' => 8, 'order'	=> 'DESC' ) ); ?>
+							<?php if ( $team->have_posts() ) : ?>
+								<?php while ( $team->have_posts() ) : $team->the_post();
   								get_template_part( 'template-parts/content', 'membre' );
 							endwhile;?>
-						<?php else : ?>
-							<div> <?php get_template_part( 'template-parts/content', 'none' ); ?> </div>
-						<?php endif; ?>
-				</div>
-		</div>
+									<?php else : ?>
+										<div>
+											<?php get_template_part( 'template-parts/content', 'none' ); ?>
+										</div>
+										<?php endif; ?>
+					</div>
+			</div>
 
 			<div id="services" class="services row row-section">
-			<div class="container">
-							<h2>Nos services</h2>
-								<?php $services = new WP_Query( array( 'post_type' => 'services', 'posts_per_page' => 9, ) ); ?>
-					<?php if ( $services->have_posts() ) : ?>
+				<div class="container">
+					<h2>Nos services</h2>
+					<?php $services = new WP_Query( array( 'post_type' => 'services', 'posts_per_page' => 9, ) ); ?>
+						<?php if ( $services->have_posts() ) : ?>
 
-						<?php	while ( $services->have_posts() ) : $services->the_post();
+							<?php	while ( $services->have_posts() ) : $services->the_post();
   								get_template_part( 'template-parts/content','service' );
 							endwhile;?>
-					 	<?php else : ?>
-							<div>
-								<?php get_template_part( 'template-parts/content', 'none' ); ?>
-							</div>
-				<?php endif; ?>
-			</div>
+								<?php else : ?>
+									<div>
+										<?php get_template_part( 'template-parts/content', 'none' ); ?>
+									</div>
+									<?php endif; ?>
+				</div>
 
 			</div>
-<div id="portfolio" class="portfolio container row-section">
-<h2>Portfolio</h2>
-</div>
+			<div id="portfolio" class="portfolio container row-section">
+				<h2>Portfolio</h2>
+			</div>
 			<div id="clients" class="clients row row-section">
-						<div class="container">
-							<h2>Nos clients</h2>
-								<?php $clients = new WP_Query( array( 'post_type' => 'clients', 'posts_per_page' => 9, ) ); ?>
-					<?php if ( $clients->have_posts() ) : ?>
+				<div class="container">
+					<h2>Nos clients</h2>
+					<?php $clients = new WP_Query( array( 'post_type' => 'clients', 'posts_per_page' => 9, ) ); ?>
+						<?php if ( $clients->have_posts() ) : ?>
 
-						<?php	while ( $clients->have_posts() ) : $clients->the_post();
+							<?php	while ( $clients->have_posts() ) : $clients->the_post();
   								get_template_part( 'template-parts/content','client' );
 							endwhile;?>
-					 	<?php else : ?>
-							<div>
-								<?php get_template_part( 'template-parts/content', 'none' ); ?>
-							</div>
-				<?php endif; ?>
+								<?php else : ?>
+									<div>
+										<?php get_template_part( 'template-parts/content', 'none' ); ?>
+									</div>
+									<?php endif; ?>
+				</div>
 			</div>
+
+			<div class="contact row">
+					<div class="form col-md-6 row-section">
+						<?php if ( !function_exists( 'dynamic_sidebar' ) || !dynamic_sidebar('Nous contacter') ) ?>
+					</div>
+					<div class="actu col-md-6">
+						<div class="map">
+						<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10497.437769434311!2d2.3068195!3d48.870424!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x71165b283afb6617!2sXprDev!5e0!3m2!1sfr!2sfr!4v1480432066244" width="100%" height="353" frameborder="0" style="border:0" allowfullscreen></iframe>
+						</div>
+						<div class="links">
+							<h2>Suivez notre actualité</h2>
+						</div>
+					</div>
+
 			</div>
-
-	<div class="contact row row-section">
-	<div class="container">
-	<div class="form col-md-6">
-			<?php if ( !function_exists( 'dynamic_sidebar' ) || !dynamic_sidebar('Nous contacter') ) ?>
-	</div>
-
-		<div class="actu col-md-6">
-	<h2>Suivez notre actualité</h2>
-</div>
-	</div>
-</div>
-
-
-<div class="map">
-
-</div>
-
-
-
-
 		</main>
 		<!-- #main -->
 	</div>

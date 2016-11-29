@@ -86,14 +86,51 @@
 
 
 .contact {
-	background-color: $color__background-contact;
 	h2 {
 		color: #fff;
 	}
 	.actu {
 		background-color: #fff;
+		padding: 0;
 		h2 {
 			color: initial;
+			text-align: center;
+		}
+		.map {
+			width: 100%;
+		}
+		.links {
+			padding: 15px;
+		}
+	}
+	.form {
+		background-color: $color__background-contact;
+		padding-left: 90px;
+		p {
+			margin-bottom: 0;
+		}
+		input[type="text"],
+		input[type="email"],
+		textarea{
+			border:inherit;
+			border-bottom: solid 2px $color__background-hr;
+			border-radius: 0;
+			background-color: inherit;
+			color: #fff;
+			opacity: .5;
+			margin: 0;
+			&:focus {
+				opacity: 1;
+				outline: none;
+			}
+		}
+		input[type="submit"] {
+			border: none;
+			border-radius: 0;
+			float: right;
+			margin-right: 50px;
+			text-transform: uppercase;
+			background-color: #fff;
 		}
 	}
 }
