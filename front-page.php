@@ -21,7 +21,7 @@ get_header(); ?>
 			<?php if ( !function_exists( 'dynamic_sidebar' ) || !dynamic_sidebar('Qui sommes nous') ) ?>
 				<!-- Equipe -->
 
-				<div class="team row row-section">
+				<div id="equipe" class="team row row-section">
 					<?php $team = new WP_Query( array( 'post_type' => 'equipe', 'posts_per_page' => 8, 'order'	=> 'DESC' ) ); ?>
 						<?php if ( $team->have_posts() ) : ?>
 							<?php while ( $team->have_posts() ) : $team->the_post();
@@ -33,7 +33,7 @@ get_header(); ?>
 				</div>
 		</div>
 
-			<div class="services row row-section">
+			<div id="services" class="services row row-section">
 			<div class="container">
 							<h2>Nos services</h2>
 								<?php $services = new WP_Query( array( 'post_type' => 'services', 'posts_per_page' => 9, ) ); ?>
@@ -50,10 +50,10 @@ get_header(); ?>
 			</div>
 
 			</div>
-<div class="portfolio container row-section">
+<div id="portfolio" class="portfolio container row-section">
 <h2>Portfolio</h2>
 </div>
-			<div class="clients row row-section">
+			<div id="clients" class="clients row row-section">
 						<div class="container">
 							<h2>Nos clients</h2>
 								<?php $clients = new WP_Query( array( 'post_type' => 'clients', 'posts_per_page' => 9, ) ); ?>

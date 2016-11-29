@@ -10,6 +10,6 @@
 ?>
 <div class="service col-md-4">
 <div class="circle"><?php echo get_field( "icon" ); ;?></div>
-<p class="service-name"><?php the_title(); ?></p>
+<h6 class="service-name"><?php the_title(); ?></h6>
 <?php the_content();?>
 </div>

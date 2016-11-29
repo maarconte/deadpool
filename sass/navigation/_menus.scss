@@ -70,13 +70,18 @@
 		text-decoration: none;
 		color: #fff;
 		font-family: $font__heading;
-		font-weight: 600;
+		font-weight: 400;
+		font-size: 0.9rem;
 	}
 
 	.current_page_item > a,
 	.current-menu-item > a,
 	.current_page_ancestor > a,
 	.current-menu-ancestor > a {
+	}
+	.menu-item {
+		float: right;
+		margin: 0 0 0 20px;
 	}
 }
 

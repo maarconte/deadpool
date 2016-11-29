@@ -1,6 +1,9 @@
 .row-section {
 	padding-top: 30px;
 	padding-bottom: 30px;
+	h2 {
+		margin-bottom: 20px;
+	}
 }
 
 .team {
@@ -34,15 +37,13 @@
 	}
 	.circle {
 		$size-circle: 60px;
-		position: absolute;
-		top: 5px;
-		left: -20px;
 		height: $size-circle;
 		width: $size-circle;
 		background-color: #fff;
 		border-radius: 50%;
 		text-align: center;
 		float: left;
+		margin-right: 10px;
 		.fa {
 			color: $color__dark-red;
 			font-size: $size-circle / 2;
@@ -50,17 +51,22 @@
 		}
 	}
 	.service-name {
-		line-height: 30px;
-		margin-left: 40px;
+		line-height: 60px;
+		clear: none;
+		color: #fff;
 		&:after {
 			content: "";
 			display: table;
 			clear: both;
 		}
+		&:first-letter {
+			color: inherit;
+		}
 	}
 
 	ul {
-		padding: 0;
+		//padding: 0;
+		//margin: 0;
 		li {
 			list-style: circle;
 		}
@@ -72,7 +78,13 @@
 	h2 {
 		color: #fff;
 	}
+	.client-logo {
+		height: 70px;
+		margin: 0 auto;
+	}
 }
+
+
 .contact {
 	background-color: $color__background-contact;
 	h2 {
