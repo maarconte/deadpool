@@ -249,7 +249,7 @@ function wpc_mime_types($mimes) {
 }
 add_filter('upload_mimes', 'wpc_mime_types');
 
-
+include_once get_template_directory() . '/lib/plugins.php';
 /**
  * Implement the Custom Header feature.
  */
