@@ -54,6 +54,7 @@
 				<h2 class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></h2>
 			<?php
 			endif; ?>
+			<div class="triangle"></div>
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">

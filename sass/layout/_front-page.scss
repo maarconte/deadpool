@@ -6,6 +6,15 @@
 	}
 }
 
+.contact-us {
+	height: 50px;
+	a {
+		float: right;
+		&:last-child {
+			margin-right: 10px;
+		}
+	}
+}
 .team {
 	.member {
 		text-align: center;

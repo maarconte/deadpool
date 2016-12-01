@@ -55,18 +55,6 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: footer.php:18
-msgid "https://wordpress.org/"
-msgstr ""
-
-#: footer.php:18
-msgid "Proudly powered by %s"
-msgstr ""
-
-#: footer.php:20
-msgid "Theme: %1$s by %2$s."
-msgstr ""
-
 #: functions.php:76
 msgid "Primary"
 msgstr ""
@@ -75,12 +63,16 @@ msgstr ""
 msgid "Qui sommes nous"
 msgstr ""
 
-#: functions.php:121, functions.php:130
+#: functions.php:121, functions.php:130, functions.php:139
 msgid "Add widgets here."
 msgstr ""
 
 #: functions.php:128
 msgid "Nous contacter"
+msgstr ""
+
+#: functions.php:137
+msgid "Footer"
 msgstr ""
 
 #: header.php:24

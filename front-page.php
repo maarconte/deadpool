@@ -20,6 +20,10 @@ get_header(); ?>
 				<!-- Description de l'entreprise -->
 				<?php if ( !function_exists( 'dynamic_sidebar' ) || !dynamic_sidebar('Qui sommes nous') ) ?>
 					<!-- Equipe -->
+				<div class="contact-us">
+				<a href="" class="btn btn-secondary disabled"><?php echo get_option('phone_number');?></a>
+				<a href="mailto:<?php echo get_option('admin_email');?>" class="btn btn-secondary"><?php echo get_option('admin_email');?></a>
+				</div>
 
 					<div id="equipe" class="team row row-section">
 						<?php $team = new WP_Query( array( 'post_type' => 'equipe', 'posts_per_page' => 8, 'order'	=> 'DESC' ) ); ?>
