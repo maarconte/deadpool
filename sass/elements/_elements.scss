@@ -4,17 +4,19 @@ html {
 
 *,
 *:before,
-*:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+*:after {
+	/* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
 	box-sizing: inherit;
 }
 
 body {
-	background: $color__background-body; /* Fallback for when there is no custom background color defined. */
+	background: $color__background-body;
+	/* Fallback for when there is no custom background color defined. */
 }
 
-blockquote, q {
+blockquote,
+q {
 	quotes: "" "";
-
 	&:before,
 	&:after {
 		content: "";
@@ -29,18 +31,19 @@ hr {
 }
 
 @import "lists";
-
 img {
-	height: auto; /* Make sure images are scaled correctly. */
-	max-width: 100%; /* Adhere to container width. */
+	height: auto;
+	/* Make sure images are scaled correctly. */
+	max-width: 100%;
+	/* Adhere to container width. */
 }
 
 figure {
-	margin: 1em 0; /* Extra wide images within figure tags don't overflow the content area. */
+	margin: 1em 0;
+	/* Extra wide images within figure tags don't overflow the content area. */
 }
 
 @import "tables";
-
 header {
 	position: relative;
 	height: 500px;
@@ -55,26 +58,67 @@ header {
 		position: absolute;
 		width: 100%;
 		&::first-letter {
-		color: inherit;
-	}
+			color: inherit;
+		}
 	}
 	.overlay {
 		position: absolute;
-		top:0;
+		top: 0;
 		left: 0;
 		width: 100%;
 		height: 100%;
 		z-index: 0;
-		background-color: rgba(0,0,0,0.8);
+		background-color: rgba(0, 0, 0, 0.8);
 	}
 }
+
 main {
 	padding: 30px 0 0;
 }
+
 footer {
 	background-color: $color__background-footer;
 	text-align: center;
 	a {
 		color: inherit;
 	}
+}
+
+.carousel-item {
+	position: relative;
+	width: 100%;
+	height: 550px;
+	overflow: hidden;
+	background-repeat: no-repeat;
+	background-size: auto 100%;
+	background-position: center center;
+	.carousel-caption {
+		background-color: rgba(255, 255, 255, 0.4);
+		padding: 20px 10px 30px;
+		width: 100%;
+		left: 0;
+		right: inherit;
+		bottom: -5px;
+		h4 {
+			&:first-letter {
+				color: inherit;
+			}
+		}
+	}
+}
+
+.carousel-indicators {
+	bottom: -15px;
+	li {
+		border-color: $color__grey;
+		&.active {
+			background-color: $color__grey;
+		}
+	}
+}
+
+.carousel-control {
+	width: 5%;
+	color: $color__black;
+	background-image: none !important;
 }

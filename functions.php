@@ -10,7 +10,11 @@
 
 function my_scripts_enqueue() {
     wp_register_script( 'bootstrap-js', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js', array('jquery'), NULL, true );
+	wp_register_script('tether', get_template_directory_uri() . '/js/tether.min.js');
+	wp_register_script('carousel', get_template_directory_uri() . '/js/carousel.min.js');
     wp_enqueue_script( 'bootstrap-js' );
+	wp_enqueue_script( 'tether' );
+	wp_enqueue_script( 'carousel' );
 }
 add_action( 'wp_enqueue_scripts', 'my_scripts_enqueue' );
 
@@ -192,7 +196,7 @@ array(
 	'supports' => array(
 		'title',
 		'thumbnail',
-		'editor',
+		//'editor',
 	),
 ) );
 register_post_type(   'clients',

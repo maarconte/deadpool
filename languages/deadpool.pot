@@ -67,19 +67,19 @@ msgstr ""
 msgid "Theme: %1$s by %2$s."
 msgstr ""
 
-#: functions.php:72
+#: functions.php:76
 msgid "Primary"
 msgstr ""
 
-#: functions.php:115
+#: functions.php:119
 msgid "Qui sommes nous"
 msgstr ""
 
-#: functions.php:117, functions.php:126
+#: functions.php:121, functions.php:130
 msgid "Add widgets here."
 msgstr ""
 
-#: functions.php:124
+#: functions.php:128
 msgid "Nous contacter"
 msgstr ""
 
