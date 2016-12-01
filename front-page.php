@@ -40,17 +40,30 @@ get_header(); ?>
 					<h2>Nos services</h2>
 					<?php $services = new WP_Query( array( 'post_type' => 'services', 'posts_per_page' => 9, ) ); ?>
 						<?php if ( $services->have_posts() ) : ?>
-
+							<?php /* The loop */ $ink_count = 0; $ink_row_count=0 ;?>
 							<?php	while ( $services->have_posts() ) : $services->the_post();
-  								get_template_part( 'template-parts/content','service' );
-							endwhile;?>
+					if ($ink_count == 0 ) : ?>
+								<div class='row-<?php echo $ink_row_count ;?> row'>
+
+					<?php endif;?>
+					<?php get_template_part( 'template-parts/content','service' ); ?>
+					<?php if ($ink_count == 2 )
+										{
+											echo "</div>";
+											$ink_count=0;
+											$ink_row_count++;
+										}
+									else {
+										$ink_count++;
+									}
+					$i++;
+					endwhile;?>
 								<?php else : ?>
 									<div>
 										<?php get_template_part( 'template-parts/content', 'none' ); ?>
 									</div>
 									<?php endif; ?>
 				</div>
-
 			</div>
 			<div id="portfolio" class="portfolio container row-section">
 				<h2>Portfolio</h2>
@@ -67,9 +80,9 @@ get_header(); ?>
 							<div class="carousel-inner" role="listbox">
 								<?php while ( $portfolio->have_posts() ) : $portfolio->the_post(); ?>
 									<div class="carousel-item" style="background-image: url('<?php the_post_thumbnail_url();?>')">
-									  <div class="carousel-caption">
-    <h4><?php the_title();?></h4>
-  </div>
+										<div class="carousel-caption">
+											<h4><?php the_title();?></h4>
+										</div>
 									</div>
 									<?php endwhile;?>
 							</div>

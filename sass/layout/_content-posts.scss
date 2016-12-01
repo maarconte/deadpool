@@ -1,0 +1,57 @@
+.post-wrapper {
+	padding: 15px 0 0 0;
+	.post-content {
+		padding: 10px;
+		width: 94%;
+		background-color: white;
+		box-shadow: rgba(28, 54, 94, 0.2) 0 0 2px;
+		.post-title {
+			$font-size: 1.3rem;
+			$line-height: 1.4;
+			$lines-to-show: 2;
+			 display: block; /* Fallback for non-webkit */
+  display: -webkit-box;
+			max-width: 100%;
+			height: $font-size*$line-height*$lines-to-show;
+			/* Fallback for non-webkit */
+			margin: 0 auto 10px;
+			font-size: $font-size;
+			line-height: $line-height;
+			-webkit-line-clamp: $lines-to-show;
+			-webkit-box-orient: vertical;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+		.post-img {
+			width: 100%;
+			height: 200px;
+			margin-bottom: 20px;
+			background-size: cover;
+			background-position: 50% 50%;
+		}
+		.caption {
+			position: relative;
+			margin-bottom: 0.5em;
+			p {
+			$font-size: 1rem;
+			$line-height: 1.4;
+			$lines-to-show: 4;
+				 display: block; /* Fallback for non-webkit */
+  display: -webkit-box;
+			max-width: 100%;
+			height: $font-size*$line-height*$lines-to-show;
+			/* Fallback for non-webkit */
+			margin: 0 auto 20px;
+			font-size: $font-size;
+			line-height: $line-height;
+			-webkit-line-clamp: $lines-to-show;
+			-webkit-box-orient: vertical;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			}
+			a:hover {
+				text-decoration: inherit;
+			}
+		}
+	}
+}

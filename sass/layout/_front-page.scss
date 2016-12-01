@@ -37,12 +37,12 @@
 	}
 	.circle {
 		$size-circle: 60px;
+		float: left;
 		height: $size-circle;
 		width: $size-circle;
 		background-color: #fff;
 		border-radius: 50%;
 		text-align: center;
-		float: left;
 		margin-right: 10px;
 		.fa {
 			color: $color__dark-red;
@@ -51,7 +51,7 @@
 		}
 	}
 	.service-name {
-		line-height: 60px;
+		margin-top: 20px;
 		clear: none;
 		color: #fff;
 		&:after {
