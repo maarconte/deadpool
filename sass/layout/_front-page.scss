@@ -43,6 +43,9 @@
 	}
 	h2 {
 		color: #fff;
+		&:first-letter{
+			color: inherit;
+		}
 	}
 	.circle {
 		$size-circle: 60px;
@@ -86,10 +89,17 @@
 	background-color: $color__background-clients;
 	h2 {
 		color: #fff;
+		margin-bottom: 30px;
+		&:first-letter{
+			color: inherit;
+		}
 	}
 	.client-logo {
 		height: 70px;
 		margin: 0 auto;
+	}
+	.client {
+		margin-bottom: 30px
 	}
 }
 
@@ -97,6 +107,9 @@
 .contact {
 	h2 {
 		color: #fff;
+				&:first-letter{
+			color: inherit;
+		}
 	}
 	.actu {
 		background-color: #fff;
@@ -117,13 +130,19 @@
 	}
 	.form {
 		background-color: $color__background-contact;
-		padding-left: 90px;
+		position: relative;
 		p {
 			margin-bottom: 0;
+		}
+		.widget {
+			width: 400px;
+			max-width: 100%;
+			margin: 0 auto;
 		}
 		input[type="text"],
 		input[type="email"],
 		textarea{
+			width: 100%;
 			border:inherit;
 			border-bottom: solid 2px $color__background-hr;
 			border-radius: 0;

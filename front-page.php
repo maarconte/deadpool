@@ -16,7 +16,7 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main container-fluid" role="main">
-			<div class="container">
+			<div class="container row-section">
 				<!-- Description de l'entreprise -->
 				<?php if ( !function_exists( 'dynamic_sidebar' ) || !dynamic_sidebar('Qui sommes nous') ) ?>
 					<!-- Equipe -->
@@ -31,10 +31,6 @@ get_header(); ?>
 								<?php while ( $team->have_posts() ) : $team->the_post();
   								get_template_part( 'template-parts/content', 'membre' );
 							endwhile;?>
-									<?php else : ?>
-										<div>
-											<?php get_template_part( 'template-parts/content', 'none' ); ?>
-										</div>
 										<?php endif; ?>
 					</div>
 			</div>
@@ -62,10 +58,6 @@ get_header(); ?>
 									}
 					$i++;
 					endwhile;?>
-								<?php else : ?>
-									<div>
-										<?php get_template_part( 'template-parts/content', 'none' ); ?>
-									</div>
 									<?php endif; ?>
 				</div>
 			</div>
@@ -99,10 +91,6 @@ get_header(); ?>
 								<span class="icon-next" aria-hidden="true"></span>
 								<span class="sr-only">Next</span>
 							</a>
-							<?php else : ?>
-								<div>
-									<?php get_template_part( 'template-parts/content', 'none' ); ?>
-								</div>
 								<?php endif; ?>
 				</div>
 			</div>
@@ -111,14 +99,9 @@ get_header(); ?>
 					<h2>Nos clients</h2>
 					<?php $clients = new WP_Query( array( 'post_type' => 'clients', 'posts_per_page' => 9, ) ); ?>
 						<?php if ( $clients->have_posts() ) : ?>
-
 							<?php	while ( $clients->have_posts() ) : $clients->the_post();
   								get_template_part( 'template-parts/content','client' );
 							endwhile;?>
-								<?php else : ?>
-									<div>
-										<?php get_template_part( 'template-parts/content', 'none' ); ?>
-									</div>
 									<?php endif; ?>
 				</div>
 			</div>

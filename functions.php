@@ -133,15 +133,6 @@ function deadpool_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
-			register_sidebar( array(
-		'name'          => esc_html__( 'Footer', 'deadpool' ),
-		'id'            => 'sidebar-3',
-		'description'   => esc_html__( 'Add widgets here.', 'deadpool' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
 }
 add_action( 'widgets_init', 'deadpool_widgets_init' );
 
@@ -264,11 +255,17 @@ class new_general_setting {
     }
     function register_fields() {
         register_setting( 'general', 'phone_number', 'esc_attr' );
+		register_setting( 'general', 'address', 'esc_attr' );
         add_settings_field('phone_number', '<label for="phone_number">'.__('Your Phone Number' , 'phone_number' ).'</label>' , array(&$this, 'fields_html') , 'general' );
+		add_settings_field('address', '<label for="address">'.__('Your Address' , 'address' ).'</label>' , array(&$this, 'fields_html2') , 'general' );
     }
 	function fields_html() {
         $value = get_option( 'phone_number', '' );
         echo '<input type="text" id="phone_number" name="phone_number" value="' . $value . '" />';
+    }
+		function fields_html2() {
+        $value = get_option( 'address', '' );
+        echo '<input type="text" id="address" name="address" value="' . $value . '" />';
     }
 }
 
