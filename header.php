@@ -29,10 +29,7 @@
 		<div class="container">
 			<div class="site-branding col-xs-7">
 				<a class="site-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-				<?php $custom_logo_id = get_theme_mod( 'custom_logo' );
-					  $image = wp_get_attachment_image_src( $custom_logo_id , 'full' )
-				;?>
-					<img src="<?php echo $image[0];?>" alt="">
+					<img src="<?php echo get_template_directory_uri();?>/img/logo.png" alt="xprdev">
 				</a>
 			</div><!-- .site-branding -->
 		<nav id="site-navigation" class="main-navigation navbar col-xs-5" role="navigation">

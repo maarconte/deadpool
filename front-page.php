@@ -117,6 +117,7 @@ get_header(); ?>
 					</div>
 					<div class="links">
 						<h2>Suivez notre actualité</h2>
+						<?php if ( !function_exists( 'dynamic_sidebar' ) || !dynamic_sidebar('Suivez notre actualité') ) ?>
 					</div>
 				</div>
 
