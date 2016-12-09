@@ -16,19 +16,19 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: 404.php:17, dist/deadpool/404.php:17
+#: 404.php:17
 msgid "Oops! That page can&rsquo;t be found."
 msgstr ""
 
-#: 404.php:21, dist/deadpool/404.php:21
+#: 404.php:21
 msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
 msgstr ""
 
-#: 404.php:33, dist/deadpool/404.php:33
+#: 404.php:33
 msgid "Most Used Categories"
 msgstr ""
 
-#: 404.php:51, dist/deadpool/404.php:51
+#: 404.php:51
 msgid "Try looking in the monthly archives. %1$s"
 msgstr ""
 
@@ -55,28 +55,28 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: functions.php:76
+#: functions.php:151
 msgid "Primary"
 msgstr ""
 
-#: functions.php:119
+#: functions.php:237
 msgid "Qui sommes nous"
 msgstr ""
 
-#: functions.php:121, functions.php:130
+#: functions.php:241, functions.php:259, functions.php:277
 msgid "Add widgets here."
 msgstr ""
 
-#: functions.php:128
+#: functions.php:255
 msgid "Nous contacter"
 msgstr ""
 
-#: header.php:24
-msgid "Skip to content"
+#: functions.php:273
+msgid "Suivez notre actualité"
 msgstr ""
 
-#: header.php:36
-msgid "Primary Menu"
+#: header.php:25
+msgid "Skip to content"
 msgstr ""
 
 #: inc/template-tags.php:28

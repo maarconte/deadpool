@@ -15,6 +15,7 @@
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 <?php wp_enqueue_script("jquery"); ?>
 <?php wp_head(); ?>
 </head>
@@ -26,14 +27,18 @@
 		<div class="overlay"></div>
 		<div class="top-bar row">
 		<div class="container">
-			<div class="site-branding col-md-7">
+			<div class="site-branding col-xs-7">
 				<a class="site-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-					<img src="http://localhost/xprdev/wp-content/themes/deadpool/img/logo.png" alt="">
+				<?php $custom_logo_id = get_theme_mod( 'custom_logo' );
+					  $image = wp_get_attachment_image_src( $custom_logo_id , 'full' )
+				;?>
+					<img src="<?php echo $image[0];?>" alt="">
 				</a>
 			</div><!-- .site-branding -->
-		<nav id="site-navigation" class="main-navigation navbar col-md-5" role="navigation">
-
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'deadpool' ); ?></button>
+		<nav id="site-navigation" class="main-navigation navbar col-xs-5" role="navigation">
+			<button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2" aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation">
+						&#9776;
+					</button>
 			<?php wp_nav_menu( array(
                 'menu'              => 'primary',
                 'theme_location'    => 'primary',
@@ -51,7 +56,7 @@
 			</div>
 <?php $description = get_bloginfo( 'description', 'display' );
 			if ( $description || is_customize_preview() ) : ?>
-				<h2 class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></h2>
+				<h2 class="site-description animated slideInDown"><?php echo $description; /* WPCS: xss ok. */ ?></h2>
 			<?php
 			endif; ?>
 			<div class="triangle"></div>

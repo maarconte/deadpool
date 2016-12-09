@@ -1,6 +1,8 @@
 .top-bar {
 	margin: 0;
+	position: relative;
 }
+
 .site-branding {
 	height: 50px;
 	padding: 10px;
@@ -9,6 +11,7 @@
 		height: 100%;
 	}
 }
+
 .main-navigation {
 	display: block;
 	ul {
@@ -16,7 +19,6 @@
 		list-style: none;
 		margin: 0;
 		padding-left: 0;
-
 		ul {
 			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 			float: left;
@@ -24,47 +26,35 @@
 			top: 1.5em;
 			left: -999em;
 			z-index: 99999;
-
 			ul {
 				left: -999em;
 				top: 0;
 			}
-
 			li {
 				&:hover > ul,
 				&.focus > ul {
 					left: 100%;
 				}
 			}
-
 			a {
 				width: 200px;
 			}
-
 			:hover > a,
-			.focus > a {
-			}
-
+			.focus > a {}
 			a:hover,
-			a.focus {
-			}
+			a.focus {}
 		}
-
 		li:hover > ul,
 		li.focus > ul {
 			left: auto;
 		}
 	}
-
 	li {
 		float: left;
 		position: relative;
-
 		&:hover > a,
-		&.focus > a {
-		}
+		&.focus > a {}
 	}
-
 	a {
 		display: block;
 		text-decoration: none;
@@ -73,19 +63,46 @@
 		font-weight: 400;
 		font-size: 0.9rem;
 	}
-
 	.current_page_item > a,
 	.current-menu-item > a,
 	.current_page_ancestor > a,
-	.current-menu-ancestor > a {
-	}
+	.current-menu-ancestor > a {}
 	.menu-item {
 		float: right;
 		margin: 0 0 0 20px;
 	}
 }
 
+
 /* Small menu. */
+
+.navbar-toggler {
+	color: white;
+	border-radius: 0;
+	border-color: white;
+	box-shadow: none;
+	float: right;
+	&:hover {
+		border-color: white;
+		box-shadow: none;
+		opacity: .5;
+	}
+	&::after {
+		clear: both;
+	}
+}
+
+.toggled {
+	.nav-menu {
+		position: absolute;
+		top: 70px;
+		right: 0;
+		padding: 15px;
+		z-index: 1000;
+		width: 500px;
+	}
+}
+
 .menu-toggle,
 .main-navigation.toggled ul {
 	display: block;
@@ -103,17 +120,14 @@
 .comment-navigation,
 .posts-navigation,
 .post-navigation {
-
 	.site-main & {
 		margin: 0 0 1.5em;
 		overflow: hidden;
 	}
-
 	.nav-previous {
 		float: left;
 		width: 50%;
 	}
-
 	.nav-next {
 		float: right;
 		text-align: right;

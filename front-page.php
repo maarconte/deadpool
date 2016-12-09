@@ -25,14 +25,15 @@ get_header(); ?>
 				<a href="mailto:<?php echo get_option('admin_email');?>" class="btn btn-secondary"><?php echo get_option('admin_email');?></a>
 				</div>
 
-					<div id="equipe" class="team row row-section">
 						<?php $team = new WP_Query( array( 'post_type' => 'equipe', 'posts_per_page' => 8, 'order'	=> 'DESC' ) ); ?>
 							<?php if ( $team->have_posts() ) : ?>
+							<div id="equipe" class="team row row-section">
 								<?php while ( $team->have_posts() ) : $team->the_post();
   								get_template_part( 'template-parts/content', 'membre' );
 							endwhile;?>
+									</div>
 										<?php endif; ?>
-					</div>
+
 			</div>
 
 			<div id="services" class="services row row-section">
@@ -77,7 +78,7 @@ get_header(); ?>
 								<?php while ( $portfolio->have_posts() ) : $portfolio->the_post(); ?>
 									<div class="carousel-item" style="background-image: url('<?php the_post_thumbnail_url();?>')">
 										<div class="carousel-caption">
-											<h4><?php the_title();?></h4>
+											<h4><a href="<?php echo get_field('url');?>"><?php the_title();?></a></h4>
 										</div>
 									</div>
 									<?php endwhile;?>

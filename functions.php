@@ -133,6 +133,14 @@ function deadpool_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
+		register_sidebar( array(
+		'name'          => esc_html__( 'Suivez notre actualité', 'deadpool' ),
+		'id'            => 'sidebar-3',
+		'description'   => esc_html__( 'Add widgets here.', 'deadpool' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'after_title'   => '</h2>',
+	) );
 }
 add_action( 'widgets_init', 'deadpool_widgets_init' );
 
@@ -275,6 +283,8 @@ function wpc_mime_types($mimes) {
   return $mimes;
 }
 add_filter('upload_mimes', 'wpc_mime_types');
+
+add_theme_support( 'custom-logo' );
 
 include_once get_template_directory() . '/lib/plugins.php';
 /**
